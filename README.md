@@ -8,7 +8,7 @@
 
 ### Comandos
 
-- go run cmd/events/main.go
+- go run main.go
 
 ## Tecnologias
 

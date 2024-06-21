@@ -1,0 +1,39 @@
+### Get events
+GET http://localhost:8080/events
+
+### Get event by id
+GET http://localhost:8080/events/1
+
+### Get spots by event id
+GET http://localhost:8080/events/1/spots
+
+### Reserve spots
+POST http://localhost:8080/events/1/reserve
+Content-Type: application/json
+
+{
+  "spots": [
+    "A2",
+    "A3"
+  ]
+}
+
+# Errors
+
+### Test not found 1
+GET http://localhost:8080/events/10
+
+### Test not found 2
+GET http://localhost:8080/events/10/spots
+
+### Test bad request (run before Reserve spots)
+POST http://localhost:8080/events/1/reserve
+Content-Type: application/json
+
+{
+  "spots": [
+    "A2",
+    "A3",
+    "B4"
+  ]
+}
