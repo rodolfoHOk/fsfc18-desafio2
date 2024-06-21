@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/rodolfoHOk/fsfc18-desafio2/internal/events/api"
 	"github.com/rodolfoHOk/fsfc18-desafio2/internal/events/repositories"
+	"github.com/rodolfoHOk/fsfc18-desafio2/internal/events/web"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 		panic(err)
 	}
 
-	eventsHandler := api.NewEventsHandler(eventRepository)
+	eventsHandler := web.NewEventsHandler(eventRepository)
 
 	routesHandler := http.NewServeMux()
 	routesHandler.HandleFunc("/events", eventsHandler.GetEvents)
